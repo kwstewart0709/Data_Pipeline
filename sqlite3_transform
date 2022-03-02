@@ -1,0 +1,18 @@
+--Using Sqlite3 to open database built in python
+.open db_1.db
+
+-- Adding headers and columns for the data 
+.mode COLUMN
+
+.headers ON
+
+SELECT * from salesdata1;
+
+-- complete a transform  to find high income and standard income home owners based on price of home.
+SELECT *,
+CASE
+WHEN price >= 500000 then 'High Income'
+ELSE 'Standard Income'
+END as IncomeType 
+FROM salesdata1 limit 10;
+
